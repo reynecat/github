@@ -18,6 +18,10 @@
    https://dev.mysql.com/downloads/connector/j/
    and copy the MySQL JDBC driver JAR file (e.g., mysql-connector-java-0.0.19-bin.jar).
 
+
 3) Change connection parameters into the MySQL profile of the pom.xml.
-   Build and starth the web app with the MySQL profile:
-   ./mvnw jetty:run-war -P MySQL
+   Build and deploy the web app with the MySQL profile:
+   ./mvnw clean package -P MySQL
+   
+   For local testing with embedded Tomcat:
+   ./mvnw cargo:run -P MySQL
