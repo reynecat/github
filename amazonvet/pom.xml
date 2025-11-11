@@ -98,6 +98,28 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+
+            <!-- 오래된 javax.xml.bind 의존성 완전 제외 -->
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- 오래된 com.sun.istack 의존성 제외 -->
+            <dependency>
+                <groupId>com.sun.istack</groupId>
+                <artifactId>istack-commons-runtime</artifactId>
+                <version>4.2.0</version>
+            </dependency>
+
+            <!-- FastInfoset 최신 버전으로 강제 -->
+            <dependency>
+                <groupId>com.sun.xml.fastinfoset</groupId>
+                <artifactId>FastInfoset</artifactId>
+                <version>2.1.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -153,6 +175,18 @@
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>4.0.5</version>
+            <exclusions>
+                <!-- 오래된 javax.xml.bind 제외 -->
+                <exclusion>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                </exclusion>
+                <!-- 오래된 istack-commons 제외 -->
+                <exclusion>
+                    <groupId>com.sun.istack</groupId>
+                    <artifactId>istack-commons-runtime</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Jakarta Activation -->
@@ -222,6 +256,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
             <version>${spring-framework.version}</version>
+            <exclusions>
+                <!-- 오래된 javax.xml.bind 제외 -->
+                <exclusion>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- ========== AspectJ ========== -->
