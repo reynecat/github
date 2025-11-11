@@ -525,6 +525,8 @@
                 <version>${maven-resources-plugin.version}</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                    <filtering>true</filtering>
                 </configuration>
             </plugin>
 
