@@ -520,6 +520,43 @@
                 </configuration>
             </plugin>
 
+</plugin>
+
+            <!-- wro4j Maven Plugin with Mockito dependency fix -->
+            <plugin>
+                <groupId>ro.isdc.wro4j</groupId>
+                <artifactId>wro4j-maven-plugin</artifactId>
+                <version>1.8.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <minimize>true</minimize>
+                    <targetGroups>petclinic</targetGroups>
+                    <destinationFolder>${project.basedir}/src/main/webapp/resources/</destinationFolder>
+                    <contextFolder>${project.basedir}/src/main/less/</contextFolder>
+                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    <cssDestinationFolder>${project.basedir}/src/main/webapp/resources/css/</cssDestinationFolder>
+                    <jsDestinationFolder>${project.basedir}/src/main/webapp/resources/js/</jsDestinationFolder>
+                    <wroFile>${project.basedir}/src/main/wro/wro.xml</wroFile>
+                    <extraConfigFile>${project.basedir}/src/main/wro/wro.properties</extraConfigFile>
+                </configuration>
+                <dependencies>
+                    <!-- Add mockito-core to fix the plugin execution error -->
+                    <dependency>
+                        <groupId>org.mockito</groupId>
+                        <artifactId>mockito-core</artifactId>
+                        <version>2.23.4</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+
             <!-- Maven Resources Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
