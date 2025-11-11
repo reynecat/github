@@ -468,9 +468,11 @@
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
                 <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
-                <jdbc.url>jdbc:mysql://amazonvet-db.ciyiccb2k2z8.ap-northeast-2.rds.amazonaws.com:3306/petclinic?useUnicode=true</jdbc.url>
+                <jdbc.url>jdbc:mysql://db-amazonvet.ciyiccb2k2z8.ap-northeast-2.rds.amazonaws.com:3306/petclinic?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC</jdbc.url>
                 <jdbc.username>admin</jdbc.username>
-                <jdbc.password>seungibabo</jdbc.password>
+                <jdbc.password>qwer1234</jdbc.password>
+                <jpa.database>MYSQL</jpa.database>
+                <db.script>mysql</db.script>
             </properties>
             <dependencies>
                 <dependency>
