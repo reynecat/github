@@ -500,9 +500,9 @@
             </resource>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
-                <filtering>true</filtering>
+                <filtering>false</filtering>
                 <includes>
-                    <exclude>**/datasource-config.xml</exclude>
+                    <include>**/datasource-config.xml</include>
                 </includes>
             </resource>
         </resources>
