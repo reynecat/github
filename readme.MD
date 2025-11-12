@@ -1,5 +1,5 @@
 # AmazonVet - PetClinic
-- 원본 출처: https://github.com/SteveKimbespin/petclinic_btc
+- 원본: 베스핀글로벌
 
 
 ## 환경 요구사항
