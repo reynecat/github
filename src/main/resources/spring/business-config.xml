@@ -35,7 +35,8 @@
     <beans profile="jpa,spring-data-jpa">
         <!-- JPA EntityManagerFactory -->
         <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-              p:dataSource-ref="dataSource">
+              p:dataSource-ref="dataSource"
+              p:entityManagerFactoryInterface="jakarta.persistence.EntityManagerFactory">
             <property name="jpaVendorAdapter">
                 <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
                       p:database="${jpa.database}" p:showSql="${jpa.showSql}"/>
